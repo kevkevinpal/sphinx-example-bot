@@ -4,9 +4,11 @@ WORKDIR /example_bot
 
 COPY package*.json ./
 RUN npm install
+RUN npm install -g nodemon
+RUN npm install babel-node
 COPY  . .
 RUN npm run build
 
 RUN ls .
 
-CMD [ "npm", "run", "start" ]
+CMD [   "npm", "run", "start"  ]

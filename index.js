@@ -3,19 +3,9 @@ import * as Sphinx from "sphinx-bot";
 require("dotenv").config();
 const msg_types = Sphinx.MSG_TYPE;
 
-let initted = false;
+var initted = false;
 
-let sphinxToken;
-
-if (process.env.IS_SPHINX_STACK) {
-  console.log(require("/example_bot/botEnvVars.json"));
-  const stackEnv = require("/example_bot/botEnvVars.json")[0];
-
-  sphinxToken = stackEnv.SPHINX_TOKEN;
-  process.env.PORT = stackEnv.PORT;
-} else {
-  sphinxToken = process.env.SPHINX_TOKEN;
-}
+const sphinxToken = process.env.SPHINX_TOKEN;
 const PREFIX = "example";
 
 function init() {
