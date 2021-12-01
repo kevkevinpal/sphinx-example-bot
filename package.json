@@ -7,13 +7,16 @@
     "clean": "rm -rf build && mkdir build",
     "build-babel": "babel -d ./build ./index.js -s",
     "build": "npm run clean && npm run build-babel",
-    "start": "node ./build/index.js",
+    "start": "node -r dotenv/config ./build/index.js",
+    "start:dev": "node ./index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Evan Feenstra",
   "license": "ISC",
   "dependencies": {
+    "babel-node": "0.0.1-security",
     "dotenv": "^8.2.0",
+    "nodemon": "^2.0.15",
     "regenerator-runtime": "^0.13.7",
     "sphinx-bot": "^0.2.19"
   },
@@ -25,8 +28,6 @@
     "@babel/preset-env": "7.1.0"
   },
   "babel": {
-    "presets": [
-      "@babel/preset-env"
-    ]
+    "presets": ["@babel/preset-env"]
   }
 }

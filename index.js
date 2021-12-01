@@ -3,10 +3,9 @@ import * as Sphinx from "sphinx-bot";
 require("dotenv").config();
 const msg_types = Sphinx.MSG_TYPE;
 
-let initted = false;
+var initted = false;
 
 const sphinxToken = process.env.SPHINX_TOKEN;
-
 const PREFIX = "example";
 
 function init() {
